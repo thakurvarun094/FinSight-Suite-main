@@ -1,0 +1,28 @@
+{
+  "model_name": "spend_forecaster",
+  "version": "v2.4.1",
+  "algorithm": "XGBoost Regression",
+  "features": [
+    "month",
+    "quarter",
+    "month_sin",
+    "month_cos",
+    "category_encoded",
+    "amount_lag_1",
+    "amount_lag_2",
+    "amount_lag_3",
+    "rolling_3m_avg",
+    "rolling_6m_avg",
+    "roi_lag_1",
+    "mom_growth",
+    "spend_ratio"
+  ],
+  "metrics": {
+    "mae": 8310.12,
+    "rmse": 13081.97,
+    "r2": 0.9818,
+    "mape": 4.49
+  },
+  "description": "XGBoost regression for monthly spending forecasting using strictly historical lag features.",
+  "trained_at": "2026-09-25T17:48:21.659796+00:00"
+}
