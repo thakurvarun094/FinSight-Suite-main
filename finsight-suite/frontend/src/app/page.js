@@ -38,7 +38,7 @@ export default function LandingPage() {
     {
       icon: Brain,
       title: 'ML Forecasting',
-      description: 'XGBoost-powered spend forecasting with offline training pipeline. Compare RF, GBR, and XGBoost to select the best model by MAE.',
+      description: 'We use XGBoost regression for spending forecasting with strict historical lag features and zero data leakage.',
       color: 'from-accent-500 to-purple-500',
       bgColor: 'bg-accent-50',
       iconColor: 'text-accent-600'
