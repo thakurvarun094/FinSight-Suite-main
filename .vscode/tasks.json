@@ -1,0 +1,50 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start Backend (FastAPI)",
+      "type": "shell",
+      "command": "source .venv/bin/activate && cd backend && uvicorn main:app --reload --host 0.0.0.0 --port 8000",
+      "options": {
+        "cwd": "${workspaceFolder}/finsight-suite"
+      },
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "finsight"
+      }
+    },
+    {
+      "label": "Start Frontend (Next.js)",
+      "type": "shell",
+      "command": "npm run dev",
+      "options": {
+        "cwd": "${workspaceFolder}/finsight-suite/frontend"
+      },
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "finsight"
+      }
+    },
+    {
+      "label": "Run Full FinSight Suite",
+      "type": "shell",
+      "command": "echo 'FinSight Suite: Launching Backend (port 8000) and Frontend (port 3000)...'",
+      "dependsOn": [
+        "Start Backend (FastAPI)",
+        "Start Frontend (Next.js)"
+      ],
+      "dependsOrder": "parallel",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
